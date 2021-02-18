@@ -8,7 +8,9 @@
     white-space: nowrap;
 }
 
-
+.elements__heart-image:hover {
+opacity: 0.5;
+}
 
 @media screen and (max-width: 900px) {
   .elements__heart-image {
