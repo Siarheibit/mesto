@@ -1,0 +1,9 @@
+.content {
+ display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  align-items: center;
+  width: 100%;
+
+} 
+

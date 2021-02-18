@@ -1,0 +1,18 @@
+.pages {
+  font-family: 'inter', 'Arial', 'Helvetica', sans-serif;
+  color :white;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  align-items: center;
+  padding: 0 27px;
+
+}
+
+
+@media screen and (max-width: 320px) {
+ .pages {
+ padding: 0;
+  }
+}

@@ -1,0 +1,25 @@
+.elements__heart-image {
+ max-width: 22px;
+ max-height: 19px;
+ display: inline-block;
+  /* padding-left: 40px;  */
+  /* margin-right: 20px; */
+  padding-bottom: 35px;
+    white-space: nowrap;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .elements__heart-image {
+  padding-bottom: 23px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .elements__heart-image {
+
+padding: 0 0 35px 15px;
+  }
+}
