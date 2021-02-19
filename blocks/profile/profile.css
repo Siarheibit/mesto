@@ -6,18 +6,14 @@
   align-items: center;
 }
 
-
-
 @media screen and (max-width: 700px) {
   .profile {
-   flex-direction: column;
-
+    flex-direction: column;
   }
 }
 
-
 @media screen and (max-width: 450px) {
   .profile {
-  padding-bottom: 36px;
+    padding-bottom: 36px;
   }
 }

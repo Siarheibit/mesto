@@ -1,6 +1,6 @@
 //  let heart = document.querySelectorAll('.elements__heart-image');
 // for (let i = 0, length = heart.length; i < length; i++) {
-//   console.log(i);
+
 // }
 // heart.addEventListener('click', black);
 //  function black() {
