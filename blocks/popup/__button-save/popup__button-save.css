@@ -6,5 +6,11 @@
   margin-top: 48px;
   background-color: black;
   color: white;
-cursor: pointer;
+  cursor: pointer;
+}
+
+
+.popup__button-save:hover{
+  opacity: 0.8;
+  cursor: pointer;
 }

@@ -1,17 +1,3 @@
-//  let heart = document.querySelectorAll('.elements__heart-image');
-// for (let i = 0, length = heart.length; i < length; i++) {
-
-// }
-// heart.addEventListener('click', black);
-//  function black() {
-//    heart[i].src = "./images/heart-black.png";
-//   }
-//  console.log(heart.length);
-//  function black() {
-    //    heart[3].src = "./images/heart-black.png";
-//   }
-// console.log(qwer.getAttribute('placeholder'))
-
 let editButton = document.querySelector('.profile__edit-button');
 let popup = document.querySelector('.popup');
 function openPopup() {
@@ -37,3 +23,17 @@ buttonSave.addEventListener('click', rename);
 
 
 
+let heart = document.addEventListener("click", function (id) {
+  let heartId = id.target.getAttribute('id');
+  let object = document.getElementById(heartId);
+  object.setAttribute('src', './images/heart-black.png');
+
+});
+
+let buttonClose = document.querySelector('.popup__button-close');
+
+function close() {
+  popup.classList.remove('popup_opened');
+}
+
+buttonClose.addEventListener('click', close);
