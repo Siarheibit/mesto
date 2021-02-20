@@ -9,8 +9,8 @@
   white-space: nowrap;
   overflow: hidden;
   color: black;
-  display: inline-block;
-  padding: 25px 0 31px 21px;
+  /* display: inline-block; */
+  /* padding: 25px 0 31px 21px; */
   margin: 0;
 }
 

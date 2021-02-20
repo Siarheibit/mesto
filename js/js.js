@@ -25,15 +25,19 @@ buttonSave.addEventListener('click', rename);
 
 let heart = document.addEventListener("click", function (id) {
   let heartId = id.target.getAttribute('id');
+
+  if(heartId > 0 && heartId < 7){
   let object = document.getElementById(heartId);
   object.setAttribute('src', './images/heart-black.png');
+  }
+
 
 });
 
-let buttonClose = document.querySelector('.popup__button-close');
 
+
+let buttonClose = document.querySelector('.popup__button_close');
 function close() {
   popup.classList.remove('popup_opened');
 }
-
 buttonClose.addEventListener('click', close);
