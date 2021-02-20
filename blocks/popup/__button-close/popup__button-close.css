@@ -12,3 +12,10 @@
 .popup__button-close:hover{
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+ .popup__button-close {
+  margin-right: 0;
+  margin-top: -330px;
+  }
+}
