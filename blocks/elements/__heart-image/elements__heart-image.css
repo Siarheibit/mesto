@@ -1,11 +1,11 @@
 .elements__heart-image {
-    max-width: 22px;
-    max-height: 19px;
-    white-space: nowrap;
-    align-self: center;
+  max-width: 22px;
+  max-height: 19px;
+  white-space: nowrap;
+  align-self: center;
 }
 
 .elements__heart-image:hover {
-    opacity: 0.5;
-    cursor: pointer;
+  opacity: 0.5;
+  cursor: pointer;
 }

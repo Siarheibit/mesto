@@ -6,16 +6,16 @@
   max-width: 40px;
   max-height: 40px;
   padding: 0;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
-.popup__button_close:hover{
-    cursor: pointer;
+.popup__button_close:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
- .popup__button_close {
-  margin-right: 0;
-  margin-top: -330px;
+  .popup__button_close {
+    margin-right: 0;
+    margin-top: -330px;
   }
 }

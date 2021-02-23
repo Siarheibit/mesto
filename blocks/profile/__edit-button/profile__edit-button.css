@@ -6,7 +6,7 @@
   border-width: 1px;
   background-color: black;
   font-size: 0;
-  
+  align-self: flex-end;
 }
 
 .profile__edit-button:hover {

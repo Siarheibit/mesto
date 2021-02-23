@@ -6,10 +6,9 @@
   margin-top: 41px;
 }
 
-
 @media screen and (max-width: 320px) {
-.header__line {
+  .header__line {
     margin-top: 31px;
-  max-width: 320px;
+    max-width: 320px;
   }
 }
