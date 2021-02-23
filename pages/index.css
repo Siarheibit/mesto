@@ -1,13 +1,10 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/font.css);
-
 @import url(..//blocks/pages/pages.css);
-
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__line/header__line.css);
 @import url(../blocks/logo/logo.css);
 @import url(../blocks/content/content.css);
-
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__info/profile__info.css);
@@ -15,15 +12,13 @@
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
-
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__element/elements__element.css);
 @import url(../blocks/elements/__img/elements__img.css);
 @import url(../blocks/elements/__text/elements__text.css);
 @import url(../blocks/elements/__heart-image/elements__heart-image.css);
-
+@import url(../blocks/elements/__group/elements__group.css);
 @import url(../blocks/footer/footer.css);
-
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__title/popup__title.css);
@@ -33,13 +28,5 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__text/popup__text_name.css);
 @import url(../blocks/popup/__text/popup__text_job.css);
-
-
 @import url(../blocks/popup/__button_close/popup__button_close.css);
 @import url(../blocks/popup/__button_close/_close_icone/popup__button_close_icone.css);
-
-
-.qw{
-display: flex;
-justify-content: space-around;
-}
