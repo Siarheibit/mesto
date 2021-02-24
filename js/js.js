@@ -37,7 +37,7 @@ let heart = document.addEventListener("click", function(id) {
 
 
 
-let buttonClose = document.querySelector('.popup__button_close');
+let buttonClose = document.querySelector('.popup__button-close');
 
 function close() {
     popup.classList.remove('popup_opened');

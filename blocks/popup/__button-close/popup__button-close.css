@@ -1,4 +1,4 @@
-.popup__button_close {
+.popup__button-close {
   align-self: flex-end;
   margin-right: -35px;
   margin-top: -350px;
@@ -9,12 +9,12 @@
   background-color: transparent;
 }
 
-.popup__button_close:hover {
+.popup__button-close:hover {
   cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
-  .popup__button_close {
+  .popup__button-close {
     margin-right: 0;
     margin-top: -330px;
   }
