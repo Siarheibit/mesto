@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css" type="text/css">
+    <link rel="stylesheet" href="./pages/Index.css" type="text/css">
     <title>Место-Россия</title>
 </head>
 
@@ -13,7 +13,6 @@
 
         <header class="header">
             <img class="logo" src="./images/logo.svg" alt="Логотип">
-            <div class="header__line"></div>
         </header>
 
         <main class="content">
@@ -22,76 +21,100 @@
 
                 <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
                 <div class="profile__info">
-                    <div class="profile__blocks">
+                      <div class="profile__block">
                       <h1 class="profile__title">Жак-Ив Кусто</h1>
-                      <button class="profile__edit-button"><img src="./images/Vector.svg" alt="Редактирование"></button>
+                      <button type="button" class="profile__edit-button"><img src="./images/Vector.svg" alt="Редактирование"></button>
                     </div>
-                    <h3 class="profile__subtitle">Исследователь океана</h3>
+                     <p class="profile__subtitle">Исследователь океана</p>
                 </div>
-                <button class="profile__add-button"><img src="./images/button-add.svg" alt="Добавить"></button>
-               
-                <div class="popup">
-                    <div class="popup__container">
-                        <p class="popup__title">Редактировать профиль</p>
-                        <input type="text" placeholder="Жак-Ив Кусто" class="popup__text popup__text_name">
-                        <div class="popup__line"></div>
-                        <input type="text" placeholder="Исследователь океана" class="popup__text popup__text_job">
-                        <div class="popup__line"></div>
-                        <button type="button" class="popup__button-save">Сохранить</button>
-                        <button class="popup__button-close"><img src="images/kr.svg" alt="Крестик"></button>
-                    </div>
-
-                </div>
-            </section>
+                <button type="button" class="profile__add-button"><img src="./images/button-add.svg" alt="Добавить"></button>
+                                   </section>
 
             <section class="elements">
                 <div class="elements__element">
                     <img class="elements__img" src="./images/tula.jpg" alt="Тула">
 
                     <div class="elements__group">
-                        <p class="elements__text">Тульская область</p>
+                        <h3 class="elements__text">Тульская область</h3>
                         <img class="elements__heart-image" src="./images/heart.svg" id="1" alt="лайк">
                     </div>
                 </div>
                 <div class="elements__element">
                     <img class="elements__img" src="./images/baikal.jpg" alt="Байкал">
                     <div class="elements__group">
-                        <p class="elements__text">Озеро Байкал</p>
+                        <h3 class="elements__text">Озеро Байкал</h3>
                         <img class="elements__heart-image" src="./images/heart.svg" id="2" alt="лайк">
                     </div>
                 </div>
                 <div class="elements__element">
                     <img class="elements__img" src="./images/ryazan.jpg" alt="Рязань">
                     <div class="elements__group">
-                        <p class="elements__text">Рязань</p>
+                        <h3 class="elements__text">Рязань</h3>
                         <img class="elements__heart-image" src="./images/heart.svg" id="3" alt="лайк">
                     </div>
                 </div>
                 <div class="elements__element">
                     <img class="elements__img" src="./images/sochi.jpg" alt="Сочи">
                     <div class="elements__group">
-                        <p class="elements__text">Сочи</p>
+                        <h3 class="elements__text">Сочи</h3>
                         <img class="elements__heart-image" src="./images/heart.svg" id="4" alt="лайк">
                     </div>
                 </div>
                 <div class="elements__element">
                     <img class="elements__img" src="./images/onega.jpg" alt="Онежское озеро">
                     <div class="elements__group">
-                        <p class="elements__text">Онежское озеро</p>
+                        <h3 class="elements__text">Онежское озеро</h3>
                         <img class="elements__heart-image" src="./images/heart.svg" id="5" alt="лайк">
                     </div>
                 </div>
                 <div class="elements__element">
                     <img class="elements__img" src="./images/primorski_krai.jpg" alt="Приморски край">
                     <div class="elements__group">
-                        <p class="elements__text">Приморски край</p>
+                        <h3 class="elements__text">Приморски край</h3>
                         <img class="elements__heart-image" src="./images/heart.svg" id="6" alt="лайк">
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="footer">© 2020 Mesto Russia</footer>
+        <footer class="footer"><p class="footer__text">© 2020 Mesto Russia</p></footer>
+
+
+        <!-- <div class="popup">
+            <form class="popup__container">
+              
+                <fieldset>
+                <input type="text" placeholder="Жак-Ив Кусто" class="popup__text popup__text_name">
+            </fieldset>
+
+            <fieldset>
+                <input type="text" placeholder="Исследователь океана" class="popup__text popup__text_job">
+            </fieldset>
+                
+           
+                
+            </form> -->
+
+            <div class="popup">
+                <form class="popup__container">
+                    <h3 class="popup__title">Редактировать профиль</h3>
+                    <fieldset class="form__input-container form__input-container_ctrl_texts">
+                      <input type="text" placeholder="Имя" class="popup__text popup__text_name">
+                      <input type="text" placeholder="Любимое дело" class="popup__text popup__text_job">
+                     </fieldset>
+                     <button type="submit" class="popup__button-save">Сохранить</button>    
+                     <button type="button" class="popup__button-close"><img class="popup__button-close_icone" src="images/kr.svg" alt="Крестик"></button>
+                </form>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
     </div>
     <script src="./js/js.js"></script>
 </body>

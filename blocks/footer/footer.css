@@ -1,20 +1,12 @@
 .footer {
   max-width: 880px;
   width: 100%;
-  color: rgba(84, 84, 84, 1);
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
   padding: 47px 0 60px 0;
-  /* align-self: flex-start; */
   margin: 0 auto;
 }
 
 @media screen and (max-width: 450px) {
   .footer {
     max-width: 282px;
-    font-size: 14px;
-    line-height: 17px;
   }
 }
