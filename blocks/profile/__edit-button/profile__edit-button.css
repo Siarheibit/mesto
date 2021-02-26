@@ -7,6 +7,9 @@
   background-color: black;
   font-size: 0;
   align-self: flex-end;
+  background-image: url(../../../images/Vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .profile__edit-button:hover {

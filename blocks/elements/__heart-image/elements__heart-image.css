@@ -3,6 +3,12 @@
   max-height: 19px;
   white-space: nowrap;
   align-self: center;
+  background-image: url(../../../images/heart.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  padding: 12px;
 }
 
 .elements__heart-image:hover {
