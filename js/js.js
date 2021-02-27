@@ -17,17 +17,13 @@ function close() {
   popup.classList.remove("popup_opened");
 }
 
-function rename() {
+function rename(event) {
   title.textContent = newName.value;
   subTitle.textContent = newJob.value;
   close();
+  event.preventDefault();
 }
 
-popup__form.addEventListener("submit", function (event) {
-  rename();
-  event.preventDefault();
-});
-
-
+popup__form.addEventListener("submit", rename);
 buttonClose.addEventListener("click", close);
 editButton.addEventListener("click", openPopup);
