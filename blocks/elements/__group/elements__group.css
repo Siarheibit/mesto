@@ -3,7 +3,7 @@
   justify-content: space-between;
   padding-left: 21px;
   padding-right: 30px;
-  padding-top: 25px;
+  margin-top: 25px;
 }
 @media screen and (max-width: 450px) {
   .elements__group {
