@@ -56,8 +56,8 @@
         </button>
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form popup__form_add" name="form__add">
-          <input name="place" type="text" placeholder="Название" class="popup__text popup__text_place"/>
-          <input name="link" type="text" placeholder="Ссылка на картинку" class="popup__text popup__text_link"/>
+          <input name="place" type="text" placeholder="Название" class="popup__text popup__text_place" />
+          <input name="link" type="text" placeholder="Ссылка на картинку" class="popup__text popup__text_link" />
           <button type="submit" class="popup__button-save">Создать</button>
         </form>
       </div>
@@ -65,10 +65,27 @@
 
 
 
+    <div class="popup popup_image">
+      <div class="popup__container popup__container_img">
+        <button type="button" class="popup__button-close popup__button-close_img">
+          <img class="popup__img" src="images/kr.svg" alt="Крестик" />
+        </button>
+        <img class="popup__big-image">
+      </div>
+    </div>
+
+
+
+
+
+
+
+
   </div>
   <template class="template">
     <div class="elements__element">
-      <img class="elements__img"/>
+      <button type="button" class="popup_trash"></button>
+      <img class="elements__img" />
       <div class="elements__group">
         <h3 class="elements__text"></h3>
         <button type="button" class="elements__heart-image"></button>

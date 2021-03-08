@@ -1,0 +1,10 @@
+.popup__elements {
+    max-width: 430px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+

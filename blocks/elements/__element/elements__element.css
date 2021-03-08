@@ -1,12 +1,14 @@
 .elements__element {
   width: calc((100% / 3) - (2rem / 3));
   max-width: 282px;
-  height: 361px;
   margin-bottom: 20px;
+  object-fit: contain;
   background-color: white;
   border-radius: 10px;
   margin-right: 1rem;
- }
+  padding-bottom: 31px;
+  position: relative;
+}
 
 .elements__element:nth-child(3n) {
   margin-right: 0;

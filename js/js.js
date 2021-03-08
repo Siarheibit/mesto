@@ -12,8 +12,9 @@ const elements = document.querySelector('.elements');
 const templateElement = document.querySelector('.template');
 let addButton = document.querySelector(".profile__add-button");
 let popupAdd = document.querySelector(".popup_add");
-let popup__form_add = document.querySelector(".popup__form_add");
+let popupFormAdd = document.querySelector(".popup__form_add");
 let buttonCloseAdd = document.querySelector(".close_add");
+let popupImage = document.querySelector(".popup_image");
 
 function openPopup() {
   popup.classList.add("popup_opened");
@@ -36,24 +37,78 @@ popup__form.addEventListener("submit", rename);
 buttonClose.addEventListener("click", close);
 editButton.addEventListener("click", openPopup);
 
+
+
 ///вторая часть работы
 
-//клон ноды из template. изменение значений текс и src
+//функция удаления карточки
+function deliteCard(event) {
+  const target = event.target;
+  const currentCard = target.closest('.elements__element');
+  currentCard.remove();
+};
+
+//функция тёмного сердца
+function switchHeart(event) {
+  const target = event.target;
+  target.classList.add('elements__heart-image_black');
+}
+
+//слушатель при создании новых карточек
+function addCardListeners(card) {
+  const deliteButton = card.querySelector('.popup_trash');
+  const likeButton = card.querySelector('.elements__heart-image');
+  const clickImage = card.querySelector('.elements__img');
+  deliteButton.addEventListener('click', deliteCard);
+  likeButton.addEventListener('click', switchHeart);
+  clickImage.addEventListener('click', openImage);
+};
+
+
+//клон ноды из template. изменение значений текс, src, alt
 function createDom(item) {
   const newItem = templateElement.content.cloneNode(true);
   const nameElement = newItem.querySelector('.elements__text');
   const imgElement = newItem.querySelector('.elements__img');
+  const altElement = newItem.querySelector('.elements__img');
   nameElement.textContent = item.name;
   imgElement.src = item.link;
+  altElement.alt = item.alt;
+
   return newItem;
 }
 
+//подключил функцию слушатель перед созданием новых карточек.
+function conectListener(item) {
+  const newCard = createDom(item);
+  addCardListeners(newCard);
+  return newCard;
+};
+
 //Добавление карточек при открытии страницы
 function renderList() {
-  const result = initialCards.map(createDom);
+  const result = initialCards.map(conectListener);
   elements.append(...result);
+};
+
+
+
+//input для новой карточки
+function addNewCard(event) {
+  event.preventDefault();
+  const inputPlace = popupFormAdd.querySelector(".popup__text_place");
+  const inputLink = popupFormAdd.querySelector(".popup__text_link");
+  const placeValue = inputPlace.value;
+  const linkValue = inputLink.value;
+  const newCard = createDom({ name: placeValue, link: linkValue }); //создали переменную в которой карта с переданными данными
+
+  addCardListeners(newCard);
+
+  elements.prepend(newCard);   // добавили карту в ДОМ
+  inputPlace.value = ''; //обнулили значения в полях инпут
+  inputLink.value = '';
+  closeAdd();
 }
-renderList();
 
 //открытие попап +
 function openPopupAdd() {
@@ -65,30 +120,33 @@ function closeAdd() {
   popupAdd.classList.remove('popup_opened');
 }
 
-//input для новой карточки
-function addTaskForm(event) {
-  event.preventDefault();
-  const inputPlace = popup__form_add.querySelector(".popup__text_place");
-  const inputLink = popup__form_add.querySelector(".popup__text_link");
-  const placeValue = inputPlace.value;
-  const linkValue = inputLink.value;
-  const newCard = createDom({ name: placeValue, link: linkValue }); //создали переменную в которой карта с переданными данными
-  elements.prepend(newCard);   // добавили карту в ДОМ
-  inputPlace.value = ''; //обнулили значения в полях инпут
-  inputLink.value = '';
-  closeAdd();
-}
-
-popup__form_add.addEventListener('submit', addTaskForm);
+popupFormAdd.addEventListener('submit', addNewCard);
 addButton.addEventListener('click', openPopupAdd);
 buttonCloseAdd.addEventListener("click", closeAdd);
 
+const bigImage = document.querySelector('.popup__big-image');
+
+//функция открытия большой картинки
+function openImage(event) {
+  const target = event.target;
+  const openImage = target.src;
+  bigImage.src = openImage;
+  openPopupImage();
+}
 
 
+const popupButtonCloseImg = document.querySelector('.popup__button-close_img');
+popupButtonCloseImg.addEventListener("click", closePopupImage);
 
 
+function openPopupImage() {
+  popupImage.classList.add('popup_opened');
+}
+//закрытие попап с фото
+function closePopupImage() {
+  popupImage.classList.remove('popup_opened');
+}
 
-
-
+renderList();
 
 
