@@ -17,7 +17,7 @@ let buttonCloseAdd = document.querySelector(".popup__button-close_add");
 let popupImage = document.querySelector(".popup_image");
 let popupButtonCloseImg = document.querySelector('.popup__button-close_img');
 let bigImage = document.querySelector('.popup__big-image');
-const popupImgTitle = document.querySelector('.container__block_title');
+const popupImgTitle = document.querySelector('.popup__block_title');
 
 function openPopup() {
   popup.classList.add("popup_opened");
