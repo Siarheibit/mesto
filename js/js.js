@@ -8,13 +8,16 @@ let subTitle = document.querySelector(".profile__subtitle");
 let buttonClose = document.querySelector(".popup__button-close");
 let popup__form = document.querySelector(".popup__form");
 //переменные 2 часть
-const elements = document.querySelector('.elements');
-const templateElement = document.querySelector('.template');
+let elements = document.querySelector('.elements');
+let templateElement = document.querySelector('.template');
 let addButton = document.querySelector(".profile__add-button");
 let popupAdd = document.querySelector(".popup_add");
 let popupFormAdd = document.querySelector(".popup__form_add");
 let buttonCloseAdd = document.querySelector(".close_add");
 let popupImage = document.querySelector(".popup_image");
+let popupButtonCloseImg = document.querySelector('.popup__button-close_img');
+let bigImage = document.querySelector('.popup__big-image');
+const popupImgTitle = document.querySelector('.popup_image_title');
 
 function openPopup() {
   popup.classList.add("popup_opened");
@@ -64,7 +67,6 @@ function addCardListeners(card) {
   clickImage.addEventListener('click', openImage);
 };
 
-
 //клон ноды из template. изменение значений текс, src, alt
 function createDom(item) {
   const newItem = templateElement.content.cloneNode(true);
@@ -100,14 +102,24 @@ function addNewCard(event) {
   const inputLink = popupFormAdd.querySelector(".popup__text_link");
   const placeValue = inputPlace.value;
   const linkValue = inputLink.value;
+  const altValue = inputPlace.value;
   const newCard = createDom({ name: placeValue, link: linkValue }); //создали переменную в которой карта с переданными данными
-
   addCardListeners(newCard);
-
   elements.prepend(newCard);   // добавили карту в ДОМ
   inputPlace.value = ''; //обнулили значения в полях инпут
   inputLink.value = '';
   closeAdd();
+}
+
+//функция открытия большой картинки
+function openImage(event) {
+  const target = event.target;
+  const openImage = target.src;
+  const openTitle = target.alt;
+  bigImage.src = openImage;
+  console.log(bigImage)
+  popupImgTitle.textContent = openTitle;
+  openPopupImage();
 }
 
 //открытие попап +
@@ -120,25 +132,6 @@ function closeAdd() {
   popupAdd.classList.remove('popup_opened');
 }
 
-popupFormAdd.addEventListener('submit', addNewCard);
-addButton.addEventListener('click', openPopupAdd);
-buttonCloseAdd.addEventListener("click", closeAdd);
-
-const bigImage = document.querySelector('.popup__big-image');
-
-//функция открытия большой картинки
-function openImage(event) {
-  const target = event.target;
-  const openImage = target.src;
-  bigImage.src = openImage;
-  openPopupImage();
-}
-
-
-const popupButtonCloseImg = document.querySelector('.popup__button-close_img');
-popupButtonCloseImg.addEventListener("click", closePopupImage);
-
-
 function openPopupImage() {
   popupImage.classList.add('popup_opened');
 }
@@ -147,6 +140,9 @@ function closePopupImage() {
   popupImage.classList.remove('popup_opened');
 }
 
+popupButtonCloseImg.addEventListener("click", closePopupImage);
+addButton.addEventListener('click', openPopupAdd);
+buttonCloseAdd.addEventListener("click", closeAdd);
+popupFormAdd.addEventListener('submit', addNewCard);
+
 renderList();
-
-
