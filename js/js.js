@@ -13,11 +13,11 @@ let templateElement = document.querySelector('.template');
 let addButton = document.querySelector(".profile__add-button");
 let popupAdd = document.querySelector(".popup_add");
 let popupFormAdd = document.querySelector(".popup__form_add");
-let buttonCloseAdd = document.querySelector(".close_add");
+let buttonCloseAdd = document.querySelector(".close__add");
 let popupImage = document.querySelector(".popup_image");
 let popupButtonCloseImg = document.querySelector('.popup__button-close_img');
 let bigImage = document.querySelector('.popup__big-image');
-const popupImgTitle = document.querySelector('.popup_image_title');
+const popupImgTitle = document.querySelector('.popup__image_title');
 
 function openPopup() {
   popup.classList.add("popup_opened");
@@ -117,7 +117,6 @@ function openImage(event) {
   const openImage = target.src;
   const openTitle = target.alt;
   bigImage.src = openImage;
-  console.log(bigImage)
   popupImgTitle.textContent = openTitle;
   openPopupImage();
 }
