@@ -7,10 +7,10 @@
   bottom: 0;
   align-items: center;
   justify-content: center;
- 
-display: flex;
-    transition: opacity 1s ease-out;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
+
+  display: flex;
+  transition: opacity 0.4s, visibility 0.5s ease;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
