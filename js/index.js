@@ -1,5 +1,5 @@
 const editButton = document.querySelector(".profile__edit-button");
-let popupEdit = document.querySelector(".popup_edit");
+const popupEdit = document.querySelector(".popup_edit");
 let newName = document.querySelector(".popup__text_name_value");
 let newJob = document.querySelector(".popup__text_job_value");
 let title = document.querySelector(".profile__title");
@@ -32,9 +32,9 @@ function handleProfileFormSubmit(event) {
 
 //функция удаления карточки
 function deleteCard(event) {
-  event.target.closest('.elements__element').remove();     // const target = event.target;
-};                                                         // const currentCard = target.closest('.elements__element');
-// currentCard.remove();
+  event.target.closest('.elements__element').remove();
+};
+
 
 //функция тёмного сердца
 function switchHeart(event) {
@@ -59,7 +59,6 @@ function getCard(item) {
   nameElement.textContent = item.name;
   imgElement.src = item.link;
   imgElement.alt = item.alt;
-
   return newItem;
 }
 
@@ -82,8 +81,7 @@ function addNewCard(event) {
   const placeValue = inputPlace.value;
   const linkValue = inputLink.value;
   const altValue = inputPlace.value;
-  const newCard = getCard({ name: placeValue, link: linkValue, alt: altValue }); //создали переменную в которой карта с переданными данными
-  addCardListeners(newCard);
+  const newCard = renderCards({ name: placeValue, link: linkValue, alt: altValue }); //создали переменную в которой карта с переданными данными
   elements.prepend(newCard);   // добавили карту в ДОМ
   popupFormAdd.reset();
   closePopup(popupAdd);
@@ -95,7 +93,8 @@ function openImage(event) {
   const openImage = target.src;
   const openTitle = target.alt;
   bigImage.src = openImage;
-  popupImgTitle.textContent = "Изображение места: " + openTitle;
+  bigImage.alt = openTitle;
+  popupImgTitle.textContent = openTitle;
   openPopup(popupImage);
 }
 
@@ -106,13 +105,18 @@ function closePopup(item) {
   item.classList.remove('popup_opened');
 }
 
+function readName() {
+  newName.value = title.textContent;
+  newJob.value.value = subTitle.textContent;
+  openPopup(popupEdit);
+}
+
 addButton.addEventListener('click', () => openPopup(popupAdd));
 buttonCloseAdd.addEventListener('click', () => closePopup(popupAdd));
-editButton.addEventListener('click', () => openPopup(popupEdit));
+editButton.addEventListener('click', () => readName());
 buttonCloseEdit.addEventListener("click", () => closePopup(popupEdit));
 popupButtonCloseImg.addEventListener("click", () => closePopup(popupImage));
 popupFormEdit.addEventListener('submit', handleProfileFormSubmit);
 popupFormAdd.addEventListener('submit', addNewCard);
-
 
 renderList();
