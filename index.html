@@ -2,80 +2,84 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./pages/index.css" type="text/css" />
-  <title>Место-Россия</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" type="text/css" />
+    <title>Место-Россия</title>
 </head>
 
 <body>
-  <div class="pages">
-    <header class="header">
-      <img class="logo" src="./images/logo.svg" alt="Логотип" />
-    </header>
-    <main class="content">
-      <section class="profile">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар" />
-        <div class="profile__info">
-          <div class="profile__block">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button type="button" class="profile__edit-button"></button>
-          </div>
-          <p class="profile__subtitle">Исследователь океана</p>
+    <div class="pages">
+        <header class="header">
+            <img class="logo" src="./images/logo.svg" alt="Логотип" />
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар" />
+                <div class="profile__info">
+                    <div class="profile__block">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <button type="button" class="profile__edit-button"></button>
+                    </div>
+                    <p class="profile__subtitle">Исследователь океана</p>
+                </div>
+                <button type="button" class="profile__add-button"></button>
+            </section>
+            <section class="elements">
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">© 2020 Mesto Russia</p>
+        </footer>
+        <div class="popup popup_edit">
+            <div class="popup__container">
+                <button type="button" class="popup__button-close">
+          <img class="popup__img" src="images/kr.svg" alt="Крестик" />
+        </button>
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <form class="popup__form popup__form_edit" name="form__info" novalidate>
+                    <input name="name" type="text" placeholder="Имя" class="popup__text popup__text_name_value" id="name-text" required/>
+                    <span id="name-text-error" class="popup__text_error"></span>
+                    <input name="job" type="text" placeholder="Любимое дело" class="popup__text popup__text_job_value" id="job-text" required/>
+                    <span id="job-text-error" class="popup__text_error"></span>
+                    <button type="submit" class="popup__button-save">Сохранить</button>
+                </form>
+            </div>
         </div>
-        <button type="button" class="profile__add-button"></button>
-      </section>
-      <section class="elements">
 
-      </section>
-    </main>
 
-    <footer class="footer">
-      <p class="footer__text">© 2020 Mesto Russia</p>
-    </footer>
-    <div class="popup popup_edit">
-      <div class="popup__container">
-        <button type="button" class="popup__button-close">
+        <div class="popup popup_add">
+            <div class="popup__container">
+                <button type="button" class="popup__button-close popup__button-close_add">
           <img class="popup__img" src="images/kr.svg" alt="Крестик" />
         </button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form popup__form_edit" name="form__info">
-          <input name="name" type="text" placeholder="Имя" class="popup__text popup__text_name_value" />
-          <input name="job" type="text" placeholder="Любимое дело" class="popup__text popup__text_job_value" />
-          <button type="submit" class="popup__button-save">Сохранить</button>
-        </form>
-      </div>
-    </div>
+                <h3 class="popup__title">Новое место</h3>
+                <form class="popup__form popup__form_add" name="form__add" novalidate>
+                    <input minlength="3" maxlength="10" name="place" type="text" placeholder="Название" class="popup__text popup__text_place" id="name-card" required/>
+                    <span id="name-card-error" class="popup__text_error"></span>
+                    <input type="url" name="link" type="text" placeholder="Ссылка на картинку" class="popup__text popup__text_link" id="link-card" required/>
+                    <span id="link-card-error" class="popup__text_error"></span>
+                    <button type="submit" class="popup__button-save">Создать</button>
+                </form>
+            </div>
+        </div>
 
-
-    <div class="popup popup_add">
-      <div class="popup__container">
-        <button type="button" class="popup__button-close popup__button-close_add">
+        <div class="popup popup_image">
+            <div class="popup__container popup__container_img">
+                <button type="button" class="popup__button-close popup__button-close_img">
           <img class="popup__img" src="images/kr.svg" alt="Крестик" />
         </button>
-        <h3 class="popup__title">Новое место</h3>
-        <form class="popup__form popup__form_add" name="form__add">
-          <input name="place" type="text" placeholder="Название" class="popup__text popup__text_place" />
-          <input name="link" type="text" placeholder="Ссылка на картинку" class="popup__text popup__text_link" />
-          <button type="submit" class="popup__button-save">Создать</button>
-        </form>
-      </div>
-    </div>
+                <figure class="popup__block">
+                    <img class="popup__big-image" src="#" alt="null">
+                    <h3 class="popup__block-title"></h3>
+                </figure>
+            </div>
+        </div>
 
-    <div class="popup popup_image">
-      <div class="popup__container popup__container_img">
-        <button type="button" class="popup__button-close popup__button-close_img">
-          <img class="popup__img" src="images/kr.svg" alt="Крестик" />
-        </button>
-        <figure class="popup__block">
-          <img class="popup__big-image" src="#" alt="null">
-          <h3 class="popup__block-title"></h3>
-        </figure>
-      </div>
     </div>
-
-  </div>
-  <template class="template">
+    <template class="template">
     <div class="elements__element">
       <button type="button" class="popup_trash"></button>
       <img class="elements__img" />
@@ -85,9 +89,10 @@
       </div>
     </div>
   </template>
-  <script src="./js/cards.js"></script>
-  <script src="./js/index.js"></script>
+    <script src="./js/cards.js"></script>
+    <script src="./js/index.js"></script>
 
 </body>
 
 </html>
+html
