@@ -41,9 +41,9 @@
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form popup__form_edit" name="form__info" novalidate>
                     <input name="name" type="text" placeholder="Имя" minlength="2" maxlength="40" class="popup__text popup__text_name_value" id="name-text" required/>
-                    <span id="name-text-error" class="popup__text_error"></span>
+                    <span id="name-text-error" class="popup__error"></span>
                     <input name="job" type="text" placeholder="Любимое дело" minlength="2" maxlength="200" class="popup__text popup__text_job_value" id="job-text" required/>
-                    <span id="job-text-error" class="popup__text_error"></span>
+                    <span id="job-text-error" class="popup__error"></span>
                     <button type="submit" class="popup__button-save">Сохранить</button>
                 </form>
             </div>
@@ -58,9 +58,9 @@
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form popup__form_add" name="form__add" novalidate>
                     <input minlength="2" maxlength="30" name="place" type="text" placeholder="Название" class="popup__text popup__text_place" id="name-card" required/>
-                    <span id="name-card-error" class="popup__text_error"></span>
+                    <span id="name-card-error" class="popup__error"></span>
                     <input type="url" name="link" placeholder="Ссылка на картинку" class="popup__text popup__text_link" id="link-card" required/>
-                    <span id="link-card-error" class="popup__text_error"></span>
+                    <span id="link-card-error" class="popup__error"></span>
                     <button type="submit" class="popup__button-save">Создать</button>
                 </form>
             </div>
