@@ -19,7 +19,9 @@ const bigImage = document.querySelector('.popup__big-image');
 const popupImgTitle = document.querySelector('.popup__block-title');
 const inputPlace = popupFormAdd.querySelector(".popup__text_place");
 const inputLink = popupFormAdd.querySelector(".popup__text_link");
-/////////////////////////////////////////////////////////
+const popupList = Array.from(document.querySelectorAll(".popup"));
+
+
 
 function handleProfileFormSubmit(event) {
     event.preventDefault();
@@ -100,24 +102,37 @@ function openImage(event) {
 
 function openPopup(item) {
     item.classList.add('popup_opened');
-}
+
+    function close(event) {
+        if (event.keyCode === 27) {
+            closePopup(item);
+            window.removeEventListener('keyup', close)
+        };
+    };
+    window.addEventListener('keyup', close);
+};
+
 
 function closePopup(item) {
     item.classList.remove('popup_opened');
 
-}
+};
 
 function readName() {
     newName.value = title.textContent;
     newJob.value.value = subTitle.textContent;
     openPopup(popupEdit);
-}
-////////////////////////////////////////////
+};
+
+const popupClickClose = popupList.forEach(item => {
+    item.addEventListener('click', function(evt) {
+        if (evt.target.classList.contains("popup")) {
+            closePopup(item)
+        };
+    });
+});
 
 
-
-
-//////////////////////////
 addButton.addEventListener('click', () => openPopup(popupAdd));
 buttonCloseAdd.addEventListener('click', () => closePopup(popupAdd));
 editButton.addEventListener('click', () => readName());
@@ -127,74 +142,3 @@ popupFormEdit.addEventListener('submit', handleProfileFormSubmit);
 popupFormAdd.addEventListener('submit', addNewCard);
 
 renderList();
-//////////////////////////
-
-const showInputError = (formElement, inputElement, errorMessage) => {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    errorElement.textContent = errorMessage;
-    errorElement.classList.add('popup__text_error_visible');
-
-};
-
-const hideInputError = (formElement, inputElement) => {
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    errorElement.textContent = '';
-    errorElement.classList.remove('popup__text_error_visible');
-
-};
-
-
-
-const checkInputValidity = (formElement, inputElement) => {
-    const isInputelementValid = !inputElement.validity.valid;
-
-    if (isInputelementValid) {
-        const errorMessage = inputElement.validationMessage;
-
-        showInputError(formElement, inputElement, errorMessage);
-
-    } else {
-        hideInputError(formElement, inputElement);
-    }
-};
-
-const toggleButtonState = (inputList, buttonElement) => {
-    const hasNotValidInput = inputList.some(
-        (inputElement) => !inputElement.validity.valid
-    );
-
-    if (hasNotValidInput) {
-        buttonElement.setAttribute('disabled', true);
-        buttonElement.classList.add('popup__button-save_invalid');
-    } else {
-        buttonElement.removeAttribute('disabled', false);
-        buttonElement.classList.remove('popup__button-save_invalid');
-    }
-};
-
-const setEventListeners = (formElement) => {
-    formElement.addEventListener('submit', (event) => {
-        event.preventDefault();
-    });
-
-    const inputList = Array.from(formElement.querySelectorAll(".popup__text"));
-    const buttonElement = formElement.querySelector(".popup__button-save");
-
-    inputList.forEach(inputElement => {
-        inputElement.addEventListener('input', (event) => {
-            checkInputValidity(formElement, inputElement);
-            toggleButtonState(inputList, buttonElement);
-        });
-    });
-    toggleButtonState(inputList, buttonElement);
-};
-
-
-const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll('.popup__form'));
-    formList.forEach(setEventListeners);
-};
-
-
-
-enableValidation();
